@@ -5,13 +5,16 @@ document.querySelector('#generar-nombre').addEventListener('submit', cargarNombr
 function cargarNombres(e) {
      e.preventDefault();
 
-     // Leer las variables
-     const apikey = '53ae89eb5f3cd54814a53cc2d9085fc4';
-     const origen = document.getElementById('origen');
-     const origenSeleccionado = origen.options[origen.selectedIndex].value;
+      // Leer las variables
+      const apiKey = '53ae89eb5f3cd54814a53cc2d9085fc4';
 
-     let url = `http://ws.audioscrobbler.com/2.0/?method=geo.gettopartists&country=${origenSeleccionado}&api_key=${apikey}&format=json`;
-
+      const origen = document.getElementById('origen');
+      const origenSeleccionado = origen.options[origen.selectedIndex].value;
+      const cantidad = document.getElementById('numero').value;
+ 
+      let url = '';
+      url += `http://ws.audioscrobbler.com/2.0/?method=geo.gettopartists&country=${ origenSeleccionado }&limit=${ cantidad }&api_key=${ apiKey }&format=json`;
+ 
     
 
      
