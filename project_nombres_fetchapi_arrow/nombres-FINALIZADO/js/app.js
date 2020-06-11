@@ -11,7 +11,7 @@ function cargarNombres(e) {
      const origen = document.getElementById('origen');
      const origenSeleccionado = origen.options[origen.selectedIndex].value;
      const cantidad = document.getElementById('numero').value;
-
+     //url
      let url = '';
      url += `https://ws.audioscrobbler.com/2.0/?method=geo.gettopartists&country=${ origenSeleccionado }&limit=${ cantidad }&api_key=${ apiKey }&format=json`;
 
